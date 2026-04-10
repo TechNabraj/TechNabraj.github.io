@@ -481,3 +481,144 @@ section {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .navbar {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px 40px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    padding-left: 0;
+    margin-top: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  .hero-role {
+    font-size: 24px;
+  }
+
+  .hero-welcome {
+    font-size: 11px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-bottom {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  /* SHOW IMAGE ON MOBILE */
+  .hero-image {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 12px;
+    mix-blend-mode: normal;
+  }
+
+  /* ABOUT PAGE */
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 240px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* SKILLS PAGE */
+  .skills-grid {
+    gap: 8px;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CONTACT */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* PAGE SECTIONS */
+  .page-section {
+    padding: 40px 20px 60px;
+  }
+
+  .page-title {
+    font-size: 30px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  /* TERMINAL MODAL */
+  .terminal-card {
+    width: 90%;
+    margin: 0 20px;
+  }
+
+  .terminal-body {
+    font-size: 12px;
+    padding: 16px;
+  }
+
+}
