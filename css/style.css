@@ -552,13 +552,13 @@ section {
   }
 
   .hero-image img {
-    width: 220px;
-    height: 280px;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 12px;
-    mix-blend-mode: normal;
-  }
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 0;
+  mix-blend-mode: lighten;
+}
 
   /* ABOUT PAGE */
   .about-layout {
