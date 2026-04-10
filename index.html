@@ -3,48 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nabraj Gyawali | Web Developer</title>
+  <title>TechNabraj | Web Developer</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="nav-logo" onclick="openModal()" style="cursor:pointer;">
       <img src="images/profile.jpg" alt="Nabraj" class="nav-avatar" />
       <span>TechNabraj</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <!-- TERMINAL MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
-  <div class="terminal-card" onclick="event.stopPropagation()">
-
-    <!-- Terminal top bar -->
-    <div class="terminal-bar">
-      <div class="terminal-dots">
-        <span class="tdot red" onclick="closeModal()"></span>
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="terminal-card" onclick="event.stopPropagation()">
+      <div class="terminal-bar">
+        <div class="terminal-dots">
+          <span class="tdot red" onclick="closeModal()"></span>
+          <span class="tdot yellow"></span>
+          <span class="tdot green"></span>
+        </div>
+        <div class="terminal-title">nabraj@portfolio:~</div>
       </div>
-      <div class="terminal-title">nabraj@portfolio:~</div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="terminal-line" id="terminalOutput"></div>
+        <span class="terminal-cursor">█</span>
+      </div>
     </div>
-
-    <!-- Terminal body -->
-    <div class="terminal-body" id="terminalBody">
-      <div class="terminal-line" id="terminalOutput"></div>
-      <span class="terminal-cursor">█</span>
-    </div>
-
   </div>
-</div>
 
-  <!-- HERO -->
+  <!-- HERO ONLY -->
   <section class="hero" id="home">
     <div class="hero-text">
       <p class="hero-welcome">WELCOME TO MY WORLD</p>
@@ -59,8 +55,8 @@
           <p class="block-label">FIND ME ON</p>
           <div class="icon-row">
             <a href="https://www.linkedin.com/in/nabraj-gyawali-4a3712289/" class="icon-btn" target="_blank">in</a>
-            <a href="https://github.com/" class="icon-btn"target="_blank">gh</a>
-            <a href="mailto:ngyawali100@gmail.com" class="icon-btn"target="_blank">@</a>
+            <a href="https://github.com/TechNabraj" class="icon-btn" target="_blank">gh</a>
+            <a href="mailto:ngyawali100@gmail.com" class="icon-btn" target="_blank">@</a>
           </div>
         </div>
         <div class="hero-skills">
@@ -79,98 +75,10 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-inner">
-      <p class="section-label">// about_me</p>
-      <h2 class="section-title">About Me</h2>
-      <p class="about-text">
-        I'm an international student from <strong>Nepal</strong>, currently completing my
-        <strong>Bachelor of Information Technology</strong> in Adelaide, Australia.
-        I'm passionate about web development and love building things that solve real problems.
-        I'm actively looking for <strong>junior developer and graduate IT roles</strong>
-        in South Australia.
-      </p>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="skills" id="skills">
-    <div class="section-inner">
-      <p class="section-label">// tech_stack</p>
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <span class="skill-tag main">HTML</span>
-        <span class="skill-tag main">CSS</span>
-        <span class="skill-tag main">JavaScript</span>
-        <span class="skill-tag main">Python</span>
-        <span class="skill-tag">GitHub</span>
-        <span class="skill-tag">VS Code</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">React (learning)</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <div class="section-inner">
-      <p class="section-label">// portfolio</p>
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="card-top">
-            <h3>Portfolio Website</h3>
-            <div class="card-tags">
-              <span class="card-tag">HTML</span>
-              <span class="card-tag">CSS</span>
-              <span class="card-tag">JavaScript</span>
-            </div>
-          </div>
-          <p>My personal developer portfolio built from scratch.</p>
-          <a href="#" class="card-link">View on GitHub →</a>
-        </div>
-
-        <div class="project-card coming-soon">
-          <div class="card-top">
-            <h3>Project 2 — Coming Soon</h3>
-            <div class="card-tags">
-              <span class="card-tag">React</span>
-              <span class="card-tag">Node.js</span>
-              <span class="card-tag">SQL</span>
-            </div>
-          </div>
-          <p>Full-stack web application. Currently in progress.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="section-inner">
-      <p class="section-label">// contact</p>
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-text">
-        Open to junior developer roles, graduate programs, and internships in Adelaide.
-        Feel free to reach out.
-      </p>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/yourprofile" class="contact-btn">LinkedIn</a>
-        <a href="https://github.com/yourusername" class="contact-btn">GitHub</a>
-        <a href="mailto:your@email.com" class="contact-btn">Email Me</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="footer">
     <p>Designed & Built by Nabraj Gyawali · Adelaide, SA · 2026</p>
   </footer>
 
   <script src="js/main.js"></script>
-
 </body>
 </html>
