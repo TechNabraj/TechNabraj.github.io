@@ -129,3 +129,44 @@ document.querySelectorAll('section').forEach(section => {
   section.classList.add('hidden');
   observer.observe(section);
 });
+// ── Swipe navigation between pages ────────────
+const pages = [
+  'index.html',
+  'about.html',
+  'skills.html',
+  'projects.html',
+  'contact.html'
+];
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) < 80) return;
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  let currentIndex = pages.indexOf(currentPage);
+  if (currentIndex === -1) currentIndex = 0;
+
+  if (diff > 0) {
+    const nextIndex = currentIndex + 1;
+    if (nextIndex < pages.length) {
+      window.location.href = pages[nextIndex];
+    }
+  } else {
+    const prevIndex = currentIndex - 1;
+    if (prevIndex >= 0) {
+      window.location.href = pages[prevIndex];
+    }
+  }
+}

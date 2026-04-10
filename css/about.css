@@ -16,6 +16,8 @@
 .about-image {
   position: relative;
   margin-bottom: 24px;
+  background-color: #0f172a;
+  line-height: 0;
 }
 
 .about-image img {
@@ -23,9 +25,11 @@
   height: 300px;
   object-fit: cover;
   object-position: top center;
-  border-radius: 14px;
-  border: 2px solid #f43f5e;
+  border-radius: 0;
+  border: none;
   display: block;
+  mix-blend-mode: lighten;
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .about-image-tag {
