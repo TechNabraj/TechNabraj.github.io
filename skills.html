@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | TechNabraj</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo" onclick="openModal()" style="cursor:pointer;">
+      <img src="images/profile.jpg" alt="Nabraj" class="nav-avatar" />
+      <span>TechNabraj</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- TERMINAL MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="terminal-card" onclick="event.stopPropagation()">
+      <div class="terminal-bar">
+        <div class="terminal-dots">
+          <span class="tdot red" onclick="closeModal()"></span>
+          <span class="tdot yellow"></span>
+          <span class="tdot green"></span>
+        </div>
+        <div class="terminal-title">nabraj@portfolio:~</div>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="terminal-line" id="terminalOutput"></div>
+        <span class="terminal-cursor">█</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS PAGE -->
+  <section class="skills-section">
+
+    <div class="skills-page-header">
+      <div class="skills-title-wrap">
+        <h1 class="skills-title">My <span>Skills</span></h1>
+        <div class="skills-underline"></div>
+      </div>
+      <p class="skills-subtitle">Technologies · Tools · Competencies</p>
+    </div>
+
+    <!-- WEB DEVELOPMENT -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon web"><i class="fa-solid fa-code"></i></div>
+        <div>
+          <h2 class="category-title">Web Development</h2>
+          <p class="category-sub">Frontend · Backend · Full Stack</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#e34c26;">&#9632;</span><span class="pill-name">HTML5</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#264de4;">&#9632;</span><span class="pill-name">CSS3</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f0db4f;">&#9632;</span><span class="pill-name">JavaScript</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#61dafb;">&#9632;</span><span class="pill-name">React</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#68a063;">&#9632;</span><span class="pill-name">Node.js</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f1f5f9;">&#9632;</span><span class="pill-name">REST APIs</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">Responsive Design</span></div>
+      </div>
+    </div>
+
+    <!-- DATABASE -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon db"><i class="fa-solid fa-database"></i></div>
+        <div>
+          <h2 class="category-title">Database</h2>
+          <p class="category-sub">Design · Queries · Management</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#336791;">&#9632;</span><span class="pill-name">PostgreSQL</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">SQL</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f59e0b;">&#9632;</span><span class="pill-name">Database Design</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#28c840;">&#9632;</span><span class="pill-name">Schema Design</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f1f5f9;">&#9632;</span><span class="pill-name">Data Modelling</span></div>
+      </div>
+    </div>
+
+    <!-- CYBERSECURITY -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon sec"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <h2 class="category-title">Cybersecurity</h2>
+          <p class="category-sub">Network Security · Threat Analysis · Best Practices</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">Information Security</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">Network Security</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">Threat Analysis</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">Risk Assessment</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">Security Best Practices</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f43f5e;">&#9632;</span><span class="pill-name">CIA Triad</span></div>
+      </div>
+    </div>
+
+    <!-- PROGRAMMING -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon prog"><i class="fa-solid fa-terminal"></i></div>
+        <div>
+          <h2 class="category-title">Programming & Dev Tools</h2>
+          <p class="category-sub">Languages · Version Control · Environment</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#3572A5;">&#9632;</span><span class="pill-name">Python</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f1f5f9;">&#9632;</span><span class="pill-name">Git</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#f1f5f9;">&#9632;</span><span class="pill-name">GitHub</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#007ACC;">&#9632;</span><span class="pill-name">VS Code</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#a78bfa;">&#9632;</span><span class="pill-name">Command Line</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#a78bfa;">&#9632;</span><span class="pill-name">Agile Methodology</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#a78bfa;">&#9632;</span><span class="pill-name">Problem Solving</span></div>
+      </div>
+    </div>
+
+    <!-- IT SUPPORT -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon soft"><i class="fa-solid fa-headset"></i></div>
+        <div>
+          <h2 class="category-title">IT Support & Networking</h2>
+          <p class="category-sub">Hardware · Software · Troubleshooting</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">IT Troubleshooting</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Hardware Support</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Software Support</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Networking</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">TCP/IP</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Windows & Linux</span></div>
+      </div>
+    </div>
+
+    <!-- DESIGN & PRODUCTIVITY -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon design"><i class="fa-solid fa-pen-ruler"></i></div>
+        <div>
+          <h2 class="category-title">Design & Productivity</h2>
+          <p class="category-sub">Creative Tools · Microsoft Office Suite</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#31A8FF;">&#9632;</span><span class="pill-name">Adobe Photoshop</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#FF3366;">&#9632;</span><span class="pill-name">Adobe InDesign</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#217346;">&#9632;</span><span class="pill-name">Microsoft Excel</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#2B579A;">&#9632;</span><span class="pill-name">Microsoft Word</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#D24726;">&#9632;</span><span class="pill-name">PowerPoint</span></div>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL SKILLS -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon soft"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <h2 class="category-title">Professional Skills</h2>
+          <p class="category-sub">Communication · Teamwork · Work Ethic</p>
+        </div>
+        <span class="category-arrow">▼</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Communication</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Teamwork</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Time Management</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Fast Learner</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Attention to Detail</span></div>
+        <div class="skill-pill"><span class="pill-icon" style="color:#38bdf8;">&#9632;</span><span class="pill-name">Customer Service</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Designed & Built by Nabraj Gyawali · Adelaide, SA · 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ const terminalLines = [
   { text: '> Location    : Adelaide, SA 🇦🇺', color: '#e6edf3', delay: 2400 },
   { text: '> Status      : Open to work ✓', color: '#28c840', delay: 3000 },
   { text: '> Skills      : HTML, CSS, JS, Python', color: '#e6edf3', delay: 3600 },
-  { text: '> GitHub      : https://github.com/', color: '#58a6ff', delay: 4200, link: 'https://github.com/' },
+  { text: '> GitHub      : https://github.com/TechNabraj', color: '#58a6ff', delay: 4200, link: 'https://github.com/TechNabraj' },
   { text: '> Email       : ngyawali100@gmail.com', color: '#58a6ff', delay: 4800, link: 'mailto:ngyawali100@gmail.com' },
   { text: '', color: '', delay: 5400 },
   { text: '> Loading portfolio........... Done! ✓', color: '#f43f5e', delay: 5600 },
@@ -59,33 +59,21 @@ function typeLine(container, text, color, link) {
       i++;
     } else {
       clearInterval(typing);
-
       if (link) {
         const colonIndex = text.indexOf(':') + 1;
         const labelPart = text.substring(0, colonIndex + 1);
         const linkPart = text.substring(colonIndex + 1).trim();
-
         lineEl.textContent = '';
-
         const labelSpan = document.createElement('span');
         labelSpan.textContent = labelPart + ' ';
         labelSpan.style.color = color;
-
         const linkSpan = document.createElement('span');
         linkSpan.textContent = linkPart;
         linkSpan.style.color = '#58a6ff';
         linkSpan.style.cursor = 'pointer';
-
-        linkSpan.addEventListener('mouseenter', () => {
-          linkSpan.style.color = '#79c0ff';
-        });
-        linkSpan.addEventListener('mouseleave', () => {
-          linkSpan.style.color = '#58a6ff';
-        });
-        linkSpan.addEventListener('click', () => {
-          window.open(link, '_blank');
-        });
-
+        linkSpan.addEventListener('mouseenter', () => { linkSpan.style.color = '#79c0ff'; });
+        linkSpan.addEventListener('mouseleave', () => { linkSpan.style.color = '#58a6ff'; });
+        linkSpan.addEventListener('click', () => { window.open(link, '_blank'); });
         lineEl.appendChild(labelSpan);
         lineEl.appendChild(linkSpan);
       }
@@ -100,7 +88,6 @@ document.addEventListener('keydown', (e) => {
 
 // ── Active nav link on scroll ──────────────────
 const navLinks = document.querySelectorAll('.nav-links a');
-
 window.addEventListener('scroll', () => {
   let current = '';
   document.querySelectorAll('section').forEach(section => {
@@ -116,19 +103,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── Fade in sections on scroll ─────────────────
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('section').forEach(section => {
-  section.classList.add('hidden');
-  observer.observe(section);
-});
 // ── Swipe navigation between pages ────────────
 const pages = [
   'index.html',
@@ -153,20 +127,50 @@ document.addEventListener('touchend', (e) => {
 function handleSwipe() {
   const diff = touchStartX - touchEndX;
   if (Math.abs(diff) < 80) return;
-
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   let currentIndex = pages.indexOf(currentPage);
   if (currentIndex === -1) currentIndex = 0;
-
   if (diff > 0) {
     const nextIndex = currentIndex + 1;
-    if (nextIndex < pages.length) {
-      window.location.href = pages[nextIndex];
-    }
+    if (nextIndex < pages.length) window.location.href = pages[nextIndex];
   } else {
     const prevIndex = currentIndex - 1;
-    if (prevIndex >= 0) {
-      window.location.href = pages[prevIndex];
-    }
+    if (prevIndex >= 0) window.location.href = pages[prevIndex];
   }
 }
+
+// ── Skills Accordion ───────────────────────────
+function initAccordion() {
+  const categoryHeaders = document.querySelectorAll('.category-header');
+  if (categoryHeaders.length === 0) return;
+
+  categoryHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const grid = header.nextElementSibling;
+      const isOpen = header.classList.contains('open');
+
+      categoryHeaders.forEach(h => {
+        h.classList.remove('open');
+        const g = h.nextElementSibling;
+        if (g && g.classList.contains('skills-grid')) {
+          g.classList.remove('open');
+          g.querySelectorAll('.skill-pill').forEach(p => p.classList.remove('visible'));
+        }
+      });
+
+      if (!isOpen) {
+        header.classList.add('open');
+        if (grid && grid.classList.contains('skills-grid')) {
+          grid.classList.add('open');
+          grid.querySelectorAll('.skill-pill').forEach((pill, index) => {
+            setTimeout(() => {
+              pill.classList.add('visible');
+            }, index * 80);
+          });
+        }
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initAccordion);
